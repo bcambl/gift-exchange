@@ -76,7 +76,7 @@ if __name__ == "__main__":
           "Gift Exchange\n"
           "Generated on: %s\n"
           "============================"
-          % datetime.datetime.now().strftime('%Y/%m/%d'))
+          % datetime.datetime.now().strftime('%Y-%m-%d'))
 
     for p in people:
         print("\n%s: Gives to: %s and Recieves from: %s"
