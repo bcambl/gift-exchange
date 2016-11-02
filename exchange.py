@@ -66,7 +66,7 @@ def verify_exchange():
     return nonefound
 
 
-if __name__ == "__main__":
+def main():
     max_itertimes = (len(people) * 10)
 
     while verify_exchange():
@@ -82,3 +82,7 @@ if __name__ == "__main__":
     for p in people:
         print("\n%s: Gives to: %s and Recieves from: %s"
               % (gx[p].name, gx[p].give, gx[p].receive))
+
+
+if __name__ == "__main__":
+    main()
