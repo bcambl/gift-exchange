@@ -11,11 +11,12 @@ __date__ = '2014/10/12'
 import datetime
 import random
 
-people = ['Bonnie', 'Blayne', 'Christina', 'Keith', 'Michelle', 'John']
+people = ['Bonnie', 'Blayne', 'Christina', 'Keith', 'Michelle', 'John', 'Reg', 'Paul']
 
 couple = [['Blayne', 'Bonnie'],
           ['Keith', 'Christina'],
-          ['John', 'Michelle']]
+          ['John', 'Michelle'],
+          ['Reg', 'Paul']]
 
 
 class Person(object):
