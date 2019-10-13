@@ -102,13 +102,18 @@ def invalid_exchange():
     return invalid
 
 
-def display_exchange():
+def display_exchange(history):
     print("\nGift Exchange Members:")
     for p in people:
         print(p)
-    print("\nExchange Restrictions:")
+
+    print("\nCouple Restrictions:")
     for p1, p2, in couple:
         print("%s <-> %s" % (p1, p2))
+
+    print("\nHistory Restrictions:")
+    for x in history:
+        print("%s -> %s" % (x, history[x]))
 
     print("\n===================================\n"
           "Gift Exchange\n"
@@ -130,10 +135,9 @@ def main():
         reset_exchange()
         generate_exchange(history)
     # display the gift exchange results
-    display_exchange()
-    # write history if exchange validates
-    if not invalid_exchange():
-        set_history()
+    display_exchange(history)
+    # write exchange history
+    set_history()
 
 
 if __name__ == "__main__":
