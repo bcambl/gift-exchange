@@ -23,7 +23,14 @@ couple = [['Person1', 'Person2'],
           ['Person3', 'Person4'],
           ['Person5', 'Person6']]
 
+# set history file name/path (defaults to script location)
 history_file = "history.json"
+
+# change working directory to script path
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
 
 class Person(object):
     def __init__(self, name=None):
