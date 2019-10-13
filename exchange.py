@@ -60,6 +60,11 @@ def set_history():
         history[gx[p].name] = gx[p].give
     with open(history_file, "w") as f:
         json.dump(history, f, indent=4)
+    # write long-term history file
+    now = datetime.datetime.now().strftime('%Y%m%dT%H%M%S')
+    longterm_history_file = "%s-%s" % (now, history_file)
+    with open(longterm_history_file, "w") as f:
+        json.dump(history, f, indent=4)
 
 
 def generate_exchange(history):
