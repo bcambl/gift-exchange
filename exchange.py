@@ -85,14 +85,14 @@ def reset_exchange():
         gx[p].receive = None
 
 
-def verify_exchange():
-    nonefound = False
+def invalid_exchange():
+    invalid = False
     for p in people:
         if gx[p].receive:
             pass
         else:
-            nonefound = True
-    return nonefound
+            invalid = True
+    return invalid
 
 
 def display_exchange():
@@ -119,13 +119,13 @@ def main():
     # load previous exchange history
     history = get_history()
     # randomly generate the gift exchange until it passes all validations
-    while verify_exchange():
+    while invalid_exchange():
         reset_exchange()
         generate_exchange(history)
     # display the gift exchange results
     display_exchange()
-    # write history if exchange was successful
-    if verify_exchange():
+    # write history if exchange validates
+    if not invalid_exchange():
         set_history()
 
 
